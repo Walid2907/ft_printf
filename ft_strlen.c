@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wkerdad <wkerdad@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/11 11:27:04 by wkerdad           #+#    #+#             */
-/*   Updated: 2025/11/12 18:48:03 by wkerdad          ###   ########.fr       */
+/*   Created: 2025/10/13 12:17:58 by wkerdad           #+#    #+#             */
+/*   Updated: 2025/11/12 19:31:01 by wkerdad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "printf.h"
 
-#include"printf.h"
-
-void	ft_putchar(char c)
+size_t	ft_strlen(const char *str)
 {
-	write(1, &c, 1);
+	size_t	len;
+
+	len = 0;
+	while (str[len])
+	{
+		len++;
+	}
+	return (len);
 }

@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_char.c                                    :+:      :+:    :+:   */
+/*   ft_print_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wkerdad <wkerdad@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 18:07:09 by wkerdad           #+#    #+#             */
-/*   Updated: 2025/11/12 19:34:55 by wkerdad          ###   ########.fr       */
+/*   Created: 2025/11/12 19:06:56 by wkerdad           #+#    #+#             */
+/*   Updated: 2025/11/12 19:34:35 by wkerdad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"printf.h"
 
-int ft_print_char(int c)
+int ft_print_str(char *str,int *count)
 {
-	write(1, &c, 1);
-	return (1);
+    while(*str != '\0')
+    {
+        write(1,&str[*count],1);
+        str++;
+    }
+    return(ft_strlen(str));
 }
