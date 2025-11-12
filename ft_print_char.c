@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wkerdad <wkerdad@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/27 13:10:41 by wkerdad           #+#    #+#             */
-/*   Updated: 2025/11/11 11:29:12 by wkerdad          ###   ########.fr       */
+/*   Created: 2025/11/12 18:07:09 by wkerdad           #+#    #+#             */
+/*   Updated: 2025/11/12 18:54:06 by wkerdad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include"printf.h"
 
-void	ft_putstr(char *s)
+void ft_print_char(int c,int *count)
 {
-	if (s == NULL)
-		return ;
-	while (*s != '\0')
-	{
-		write(1, &*s, 1);
-		s++;
-	}
+    ft_putchar(c);
+    *count = *count + 1;
 }

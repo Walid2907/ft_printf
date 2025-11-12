@@ -6,35 +6,41 @@
 /*   By: wkerdad <wkerdad@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 11:20:17 by wkerdad           #+#    #+#             */
-/*   Updated: 2025/11/11 15:27:22 by wkerdad          ###   ########.fr       */
+/*   Updated: 2025/11/12 18:54:41 by wkerdad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"printf.h"
 
+static void	ft_format(va_list *args,const char *str, int *count)
+{
+	if(str[*count] == 'c')
+	{
+		ft_print_char(va_arg(*args, int),count);
+	}
+}
+
 int	ft_printf(const char *str, ...)
 {
 	va_list	args;
-	size_t	i;
-	int		buffer;
+	int	count;
 
-	buffer = 0;
-	i = 0;
+	count = 0;
 	va_start(args, str);
-	while (str[i])
+	while (str[count])
 	{
-		if (str[i] == '%')
+		if (str[count] == '%')
 		{
-			i++;
-			buffer += ft_formats(args, str, &i);
+			count++;
+			ft_format(&args, str, &count);
 		}
-		else
-		{
-			ft_putchar(str[i]);
-			buffer++;
-		}
-		i++;
+		ft_putchar(str[count]);
+		count++;
 	}
 	va_end(args);
-	return (buffer);
+	return (count);
+}
+int main()
+{
+	ft_printf("walid %c bla\nd",'f');
 }

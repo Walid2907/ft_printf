@@ -6,15 +6,14 @@
 /*   By: wkerdad <wkerdad@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 11:27:04 by wkerdad           #+#    #+#             */
-/*   Updated: 2025/11/11 11:27:56 by wkerdad          ###   ########.fr       */
+/*   Updated: 2025/11/12 18:48:03 by wkerdad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "printf.h"
+#include"printf.h"
 
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
-	return ;
 }
