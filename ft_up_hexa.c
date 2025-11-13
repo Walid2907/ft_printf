@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_str.c                                     :+:      :+:    :+:   */
+/*   ft_up_hexa.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wkerdad <wkerdad@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 19:06:56 by wkerdad           #+#    #+#             */
-/*   Updated: 2025/11/13 21:31:51 by wkerdad          ###   ########.fr       */
+/*   Created: 2025/11/13 20:41:52 by wkerdad           #+#    #+#             */
+/*   Updated: 2025/11/13 21:02:42 by wkerdad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"printf.h"
 
-int ft_print_str(char *str)
+static int count_hex_digits(unsigned long n)
 {
-    int i;
+    int count = 0;
 
-    i = 0;
-    while(str[i] != '\0')
+    if (n == 0)
+        return 1;
+
+    while (n != 0)
     {
-        write(1,&str[i],1);
-        str++;
+        n /= 16;
+        count++;
     }
-    return(ft_strlen(str)+1);
+    return count;
+}
+int     ft_up_hexa(unsigned long n)
+{
+    char *table = "0123456789ABCDEF";
+    int count = count_hex_digits(n);
+	if (n >= 16)
+		ft_up_hexa((n / 16));
+	ft_print_char(table[(n % 16)]);
+    return (count);
 }

@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_str.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr_unsigned.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wkerdad <wkerdad@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 19:06:56 by wkerdad           #+#    #+#             */
-/*   Updated: 2025/11/13 21:31:51 by wkerdad          ###   ########.fr       */
+/*   Created: 2025/11/13 17:02:45 by wkerdad           #+#    #+#             */
+/*   Updated: 2025/11/13 17:32:35 by wkerdad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"printf.h"
 
-int ft_print_str(char *str)
+static int count_digits(unsigned int n)
 {
-    int i;
+    int count = 0;
 
-    i = 0;
-    while(str[i] != '\0')
+    if (n == 0)
+        return 1; 
+
+    while (n != 0)
     {
-        write(1,&str[i],1);
-        str++;
+        n /= 10;
+        count++;
     }
-    return(ft_strlen(str)+1);
+
+    return count;
+}
+
+int     ft_putnbr_unsigned(unsigned int n)
+{
+    int count = count_digits(n);
+	if (n >= 10)
+		ft_putnbr_unsigned((n / 10));
+	ft_print_char((n % 10 + '0'));
+    return (count);
 }
