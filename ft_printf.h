@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wkerdad <wkerdad@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 11:19:05 by wkerdad           #+#    #+#             */
-/*   Updated: 2025/11/13 21:02:27 by wkerdad          ###   ########.fr       */
+/*   Updated: 2025/11/14 03:18:46 by wkerdad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF
-# define FT_PRINTF
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-#include<stdlib.h>
 #include<stdarg.h>
 #include<unistd.h>
 

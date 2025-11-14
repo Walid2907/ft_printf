@@ -6,11 +6,11 @@
 /*   By: wkerdad <wkerdad@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 16:30:23 by wkerdad           #+#    #+#             */
-/*   Updated: 2025/11/13 17:31:45 by wkerdad          ###   ########.fr       */
+/*   Updated: 2025/11/14 02:23:58 by wkerdad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"printf.h"
+#include"ft_printf.h"
 
 static int count_digits(int n)
 {
@@ -33,23 +33,18 @@ static int count_digits(int n)
 
 int     ft_putnbr(int n)
 {
+    long nb;
+
+    nb = n;
     int count = count_digits(n);
-	if (n < 0)
+	if (nb < 0)
 	{
-		if (n == -2147483648)
-		{
-			write(1, "-2147483648", 11);
-			return (11);
-		}
-		else
-		{
 			write(1, "-", 1);
             count++;
-			n = -n;
-		}
+			nb = -nb;
 	}
-	if (n >= 10)
-		ft_putnbr((n / 10));
-	ft_print_char((n % 10 + '0'));
+	if (nb >= 10)
+		ft_putnbr((nb / 10));
+	ft_print_char((nb % 10 + '0'));
     return (count);
 }

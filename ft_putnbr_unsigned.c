@@ -6,11 +6,11 @@
 /*   By: wkerdad <wkerdad@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 17:02:45 by wkerdad           #+#    #+#             */
-/*   Updated: 2025/11/13 17:32:35 by wkerdad          ###   ########.fr       */
+/*   Updated: 2025/11/14 02:23:52 by wkerdad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"printf.h"
+#include"ft_printf.h"
 
 static int count_digits(unsigned int n)
 {
