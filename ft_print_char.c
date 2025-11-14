@@ -6,13 +6,13 @@
 /*   By: wkerdad <wkerdad@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 18:07:09 by wkerdad           #+#    #+#             */
-/*   Updated: 2025/11/14 02:23:31 by wkerdad          ###   ########.fr       */
+/*   Updated: 2025/11/14 17:18:13 by wkerdad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ft_printf.h"
+#include "ft_printf.h"
 
-int ft_print_char(char c)
+int	ft_print_char(char c)
 {
-    return (write(1, &c, 1));
+	return (write(1, &c, 1));
 }

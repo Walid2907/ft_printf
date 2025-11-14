@@ -6,35 +6,36 @@
 /*   By: wkerdad <wkerdad@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 17:33:47 by wkerdad           #+#    #+#             */
-/*   Updated: 2025/11/14 03:18:33 by wkerdad          ###   ########.fr       */
+/*   Updated: 2025/11/14 17:23:37 by wkerdad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ft_printf.h"
+#include "ft_printf.h"
 
-static int count_hex_digits(unsigned long n)
+static int	count_hex_digits(unsigned long n)
 {
-    int count = 0;
+	int	count;
 
-    if (n == 0)
-        return 1;
-
-    while (n != 0)
-    {
-        n /= 16;
-        count++;
-    }
-    return count;
+	count = 0;
+	if (n == 0)
+		return (1);
+	while (n != 0)
+	{
+		n /= 16;
+		count++;
+	}
+	return (count);
 }
-int     ft_low_hexa(unsigned long n)
-{
-    char *table;
-    int count;
 
-    table = "0123456789abcdef";
-    count = count_hex_digits(n);
+int	ft_low_hexa(unsigned long n)
+{
+	char	*table;
+	int		count;
+
+	table = "0123456789abcdef";
+	count = count_hex_digits(n);
 	if (n >= 16)
 		ft_low_hexa((n / 16));
 	ft_print_char(table[(n % 16)]);
-    return (count);
+	return (count);
 }
