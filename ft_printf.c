@@ -6,7 +6,7 @@
 /*   By: wkerdad <wkerdad@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 11:20:17 by wkerdad           #+#    #+#             */
-/*   Updated: 2025/11/14 17:17:47 by wkerdad          ###   ########.fr       */
+/*   Updated: 2025/11/14 18:08:34 by wkerdad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ int	ft_printf(const char *str, ...)
 	{
 		if (str[index] == '%')
 		{
+			if (str[index + 1] == '\0' && str[0] != '%');
+				return (-1);
 			index++;
 			count += ft_format(args, str[index]);
 			index++;
