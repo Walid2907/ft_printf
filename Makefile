@@ -6,7 +6,7 @@
 #    By: wkerdad <wkerdad@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/11 11:31:01 by wkerdad           #+#    #+#              #
-#    Updated: 2025/11/13 21:04:37 by wkerdad          ###   ########.fr        #
+#    Updated: 2025/11/14 18:24:50 by wkerdad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ $(NAME) : $(OBJFILES)
 	ar rcs $(NAME) $(OBJFILES)
 
 %.o : %.c
-	$(CC) $(CFLAGS) -c $< -o  $@
+	$(CC) -c $< -o  $@
 
 #bonus: $(OBJ) $(BONUS_OBJ)
 #	ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)

@@ -6,7 +6,7 @@
 /*   By: wkerdad <wkerdad@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 11:20:17 by wkerdad           #+#    #+#             */
-/*   Updated: 2025/11/14 18:08:34 by wkerdad          ###   ########.fr       */
+/*   Updated: 2025/11/16 00:05:13 by wkerdad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int	ft_printf(const char *str, ...)
 	int		count;
 	size_t	index;
 
+	if (!str)
+		return (-1);
 	count = 0;
 	index = 0;
 	va_start(args, str);
@@ -46,18 +48,15 @@ int	ft_printf(const char *str, ...)
 	{
 		if (str[index] == '%')
 		{
-			if (str[index + 1] == '\0' && str[0] != '%');
-				return (-1);
 			index++;
+			if (str[index] == '\0')
+				return (-1);
 			count += ft_format(args, str[index]);
 			index++;
 		}
 		if (str[index] != '\0' && str[index] != '%')
-		{
-			count += ft_print_char(str[index]);
-			index++;
-		}
+			count += ft_print_char(str[index++]);
 	}
 	va_end(args);
 	return (count);
-}
+}	
